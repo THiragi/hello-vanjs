@@ -5,8 +5,8 @@ const { button, div, pre } = van.tags;
 const sleep = (ms: number) => new Promise((resolve) => setTimeout(resolve, ms));
 
 const Run = ({ sleepMs }: { sleepMs: number }) => {
-  const headingSpaces = van.state(40),
-    trailingUnderscores = van.state(0);
+  const headingSpaces = van.state(40);
+  const trailingUnderscores = van.state(0);
 
   const animate = async () => {
     while (headingSpaces.val > 0) {
@@ -28,13 +28,22 @@ const Run = ({ sleepMs }: { sleepMs: number }) => {
 
 const Hello = () => {
   const dom = div();
+  const Button = (sleepMs: number, label: string) => {
+    return button(
+      {
+        class: 'btn',
+        onclick: () => van.add(dom, Run({ sleepMs })),
+      },
+      label
+    );
+  };
   return div(
     dom,
-    button({ onclick: () => van.add(dom, Run({ sleepMs: 2000 })) }, 'Hello 🐌'),
-    button({ onclick: () => van.add(dom, Run({ sleepMs: 500 })) }, 'Hello 🐢'),
-    button({ onclick: () => van.add(dom, Run({ sleepMs: 100 })) }, 'Hello 🚶‍♂️'),
-    button({ onclick: () => van.add(dom, Run({ sleepMs: 10 })) }, 'Hello 🏎️'),
-    button({ onclick: () => van.add(dom, Run({ sleepMs: 2 })) }, 'Hello 🚀')
+    Button(2000, 'Hello 🐌'),
+    Button(500, 'Hello 🐢'),
+    Button(100, 'Hello 🚶'),
+    Button(10, 'Hello 🏎️'),
+    Button(2, 'Hello 🚀')
   );
 };
 
