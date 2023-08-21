@@ -1,4 +1,5 @@
 import van from 'vanjs-core';
+import { speeders } from './const';
 
 const { button, div, pre } = van.tags;
 
@@ -37,13 +38,10 @@ const Hello = () => {
       label
     );
   };
+
   return div(
     dom,
-    Button(2000, 'Hello 🐌'),
-    Button(500, 'Hello 🐢'),
-    Button(100, 'Hello 🚶'),
-    Button(10, 'Hello 🏎️'),
-    Button(2, 'Hello 🚀')
+    ...speeders.map(({ sleepMs, label }) => Button(sleepMs, label))
   );
 };
 
