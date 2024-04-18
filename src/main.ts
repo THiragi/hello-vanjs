@@ -4,9 +4,11 @@ import { foo } from './styles.css';
 
 const { button, div, pre } = van.tags;
 
-const sleep = (ms: number) => new Promise((resolve) => setTimeout(resolve, ms));
+function sleep(ms: number) {
+  return new Promise((resolve) => setTimeout(resolve, ms));
+}
 
-const Run = ({ sleepMs }: { sleepMs: number }) => {
+function Run(sleepMs: number, label: string) {
   const headingSpaces = van.state(40);
   const trailingUnderscores = van.state(0);
 
@@ -21,12 +23,12 @@ const Run = ({ sleepMs }: { sleepMs: number }) => {
   return div(
     pre(
       () =>
-        `${' '.repeat(headingSpaces.val)}🚐💨Hello VanJS!${'_'.repeat(
+        `${' '.repeat(headingSpaces.val)}${label}Hello VanJS!${'_'.repeat(
           trailingUnderscores.val
         )}`
     )
   );
-};
+}
 
 const Hello = () => {
   const dom = div();
@@ -34,9 +36,9 @@ const Hello = () => {
     return button(
       {
         class: foo,
-        onclick: () => van.add(dom, Run({ sleepMs })),
+        onclick: () => van.add(dom, Run(sleepMs, label)),
       },
-      label
+      `Hello ${label}`
     );
   };
 

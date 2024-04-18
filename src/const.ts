@@ -1,22 +1,22 @@
 export const speeders = [
   {
-    label: 'Hello 🐌',
+    label: '🐌',
     sleepMs: 2000,
   },
   {
-    label: 'Hello 🐢',
+    label: '🐢',
     sleepMs: 500,
   },
   {
-    label: 'Hello 🚶',
+    label: '🚶',
     sleepMs: 100,
   },
   {
-    label: 'Hello 🏎️',
+    label: '🏎️',
     sleepMs: 10,
   },
   {
-    label: 'Hello 🚀',
+    label: '🚀',
     sleepMs: 2,
   },
 ];
