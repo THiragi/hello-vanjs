@@ -1,6 +1,6 @@
 import { style } from '@vanilla-extract/css';
 
-export const foo = style({
+export const btn = style({
   color: '#fff',
   backgroundColor: '#2153aa',
   padding: '0.5em',

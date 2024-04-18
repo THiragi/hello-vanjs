@@ -1,6 +1,6 @@
 import van from 'vanjs-core';
 import { speeders } from './const';
-import { foo } from './styles.css';
+import { btn } from './styles.css';
 
 const { button, div, pre } = van.tags;
 
@@ -35,7 +35,7 @@ const Hello = () => {
   const Button = (sleepMs: number, label: string) => {
     return button(
       {
-        class: foo,
+        class: btn,
         onclick: () => van.add(dom, Run(sleepMs, label)),
       },
       `Hello ${label}`

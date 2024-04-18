@@ -14,8 +14,3 @@ select {
 	-moz-appearance: none;
 	appearance: none;
 }
-
-.btn {
-  border: rgb(120,120,120) solid 1px;
-  padding: 16px;
-}
