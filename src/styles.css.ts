@@ -1,6 +1,7 @@
 import { style } from '@vanilla-extract/css';
 
 export const foo = style({
-  color: 'red',
-  backgroundColor: 'blue',
+  color: '#fff',
+  backgroundColor: '#2153aa',
+  padding: '0.5em',
 });
